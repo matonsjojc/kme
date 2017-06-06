@@ -7,4 +7,17 @@
 
 {% block content %}
     <p>kle bo html form: </p>
+    <form method="POST" action="{% url 'izpolnjevanje' %}">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+            <p>{{ field.errors }}
+            {{ field.help_text }}
+            {{ field }}</p>
+        {% endfor %}
+        <input type="submit" value="Ok, naprej." />
+    </form>
+
 {% endblock %}
