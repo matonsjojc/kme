@@ -13,9 +13,9 @@
             {{ hidden }}
         {% endfor %}
         {% for field in form.visible_fields %}
-            <p>{{ field.errors }}
-            {{ field.help_text }}
-            {{ field }}</p>
+            {{ field.errors }}
+            {{ field.label }}
+            {{ field }}
         {% endfor %}
         <input type="submit" value="Ok, naprej." />
     </form>

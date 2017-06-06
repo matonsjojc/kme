@@ -12,7 +12,7 @@ def nova_vloga(request):
     context_dict = {}
     #kle kreiraj novo Raziskavo, vezano na userprofile
     #zacni s 1. formo (forms.form_vrstni_red["1"]):
-    form = forms.form_vrstni_red["1"]
+    form = forms.form_vrstni_red["2"]
     context_dict["form"] = form
     return render(request, 'kme/vloga.html', context=context_dict)
 
