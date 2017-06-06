@@ -7,6 +7,10 @@ def index(request):
     #return HttpResponse("Rango says hey there partner!")
     return render(request, 'kme/index.html', context=context_dict)
 
+def nova_vloga(request):
+    context_dict = {}
+    return render(request, 'kme/vloga.html')
+
 
 
 
