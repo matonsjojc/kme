@@ -5,10 +5,10 @@ from kme.models import Vlagatelj, Raziskava
 
 
 class VlagateljForm(forms.ModelForm):
-    
+
     class Meta:
         model = Vlagatelj
-        fields = ('ime',)#, 'priimek', 'sifra_arrs', 'email')
+        fields = ('user', 'ime',)#, 'priimek', 'sifra_arrs', 'email')
 
 class RaziskavaForm(forms.ModelForm):
     naslov_raziskave_slo = forms.CharField(label="Naaaaaslov:")
