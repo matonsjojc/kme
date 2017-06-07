@@ -8,15 +8,29 @@ def index(request):
     #return HttpResponse("Rango says hey there partner!")
     return render(request, 'kme/index.html', context=context_dict)
 
-def nova_vloga(request):
-    context_dict = {}
+def vlagatelj_osnovni_podatki(request):
     #kle kreiraj novo Raziskavo, vezano na userprofile
-    #zacni s 1. formo (forms.form_vrstni_red["1"]):
-    form = forms.form_vrstni_red["2"]
-    context_dict["form"] = form
-    return render(request, 'kme/vloga.html', context=context_dict)
+    #ce je get, zacni s 1. formo (forms.form_vrstni_red["1"], sicer naprj):
+    form = forms.VlagateljForm()
+    print(request.method)
+    if request.method == 'POST':
+        form = forms.VlagateljForm(request.POST)
 
-def izpolnjevanje(request):
+        if form.is_valid():
+            form.save(commit=True)
+            print("validna....")
+
+        else:
+
+            print("neki ne stima", form.errors)
+
+    context_dict = {
+        "form": form,
+        }
+
+    return render(request, 'kme/vlagatelj_osnovni_podatki.html', context=context_dict)
+
+def raziskava(request):
     context_dict = {}
     return render(request, 'kme/vloga.html', context=context_dict)
 

@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
-    <p>Vlagatelj - osnovni podatki </p>
-    <form method="POST" action="{% url 'vlagatelj_osnovni_podatki' %}">
+    <p>Raziskava </p>
+    <form method="POST" action="{% url 'raziskava' %}">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
             {{ hidden }}

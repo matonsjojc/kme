@@ -5,7 +5,7 @@ from kme.models import Vlagatelj, Raziskava
 
 
 class VlagateljForm(forms.ModelForm):
-    ime = forms.CharField(max_length=200,
+    """ime = forms.CharField(max_length=200,
                           label="Ime")
     priimek = forms.CharField(max_length=200,
                               label="Priimek")
@@ -14,10 +14,10 @@ class VlagateljForm(forms.ModelForm):
                                  required=False)
     email = forms.EmailField(max_length=254,
                              label="email:")
-
+"""
     class Meta:
         model = Vlagatelj
-        fields = ('ime', 'priimek', 'sifra_arrs', 'email')
+        fields = ('ime',)#, 'priimek', 'sifra_arrs', 'email')
 
 class RaziskavaForm(forms.ModelForm):
     naslov_raziskave_slo = forms.CharField(label="Naaaaaslov:")

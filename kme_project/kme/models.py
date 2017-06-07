@@ -3,15 +3,15 @@ from django.db import models
 # Create your models here.
 class Vlagatelj(models.Model):
     ime = models.CharField(max_length=200)
-    priimek = models.CharField(max_length=200)
-    sifra_arrs = models.CharField(max_length=200, blank=True)
-    email = models.EmailField(max_length=254)
+    #priimek = models.CharField(max_length=200)
+    #sifra_arrs = models.CharField(max_length=200, blank=True)
+    #email = models.EmailField(max_length=254)
 
     class Meta:
         verbose_name_plural = 'vlagatelji'
 
     def __str__(self):
-        return self.priimek
+        return self.ime
 
 class Raziskava(models.Model):
     TIP_RAZISKAVE_CHOICES = (
