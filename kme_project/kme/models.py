@@ -22,7 +22,7 @@ class Raziskava(models.Model):
     )
 
     naslov_raziskave_slo = models.TextField()
-    sifra_raziskave = models.CharField(max_length=200)
+    sifra_raziskave = models.CharField(max_length=200, blank=True)
     tip_raziskave = models.CharField(max_length=200, choices=TIP_RAZISKAVE_CHOICES)
     tip_raziskave_drugo = models.CharField(max_length=200, blank=True)
 

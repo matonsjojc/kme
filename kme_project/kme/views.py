@@ -21,7 +21,7 @@ def vlagatelj_osnovni_podatki(request):
         if form.is_valid():
             form.save(commit=True)
             print("validna....")
-            return HttpResponseRedirect('http://127.0.0.1:8000/kme/raziskava')
+            return HttpResponseRedirect(reverse('raziskava'))
         else:
             print("neki ne stima", form.errors)
     context_dict = {
