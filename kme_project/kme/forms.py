@@ -11,7 +11,7 @@ class VlagateljForm(forms.ModelForm):
         fields = ('user', 'ime',)#, 'priimek', 'sifra_arrs', 'email')
 
 class RaziskavaForm(forms.ModelForm):
-    naslov_raziskave_slo = forms.CharField(label="Naaaaaslov:")
+    naslov_raziskave_slo = forms.CharField(label="Naslov:")
 
     class Meta:
         model = Raziskava
