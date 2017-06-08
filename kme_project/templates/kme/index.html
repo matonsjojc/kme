@@ -7,6 +7,12 @@
 
 {% block content %}
     <div>
-      <p><a href="{% url 'vlagatelj_osnovni_podatki' %}">Nova vloga</a><p>
+      <strong>KME</strong>
+    <div>
+      {% if user.is_authenticated %}
+          <p><a href="{% url 'vlagatelj_osnovni_podatki' %}">Nova vloga</a><p>
+      {% else %}
+          <p>Potrebna je <a href="{% url 'auth_login' %}">prijava.</a></p>
+      {% endif %}
     <div>
 {% endblock %}
