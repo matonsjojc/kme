@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^kme/', include('kme.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 ]
